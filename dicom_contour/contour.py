@@ -303,5 +303,5 @@ def create_image_mask_files(path, index, img_format='png'):
     os.makedirs(new_path + '/images/', exist_ok=True)
     os.makedirs(new_path + '/masks/', exist_ok=True)
     for i in range(len(X)):
-        plt.imsave(new_path + f'/images/image_{i}.{img_format}', X[i, :, :])
-        plt.imsave(new_path + f'/masks/mask_{i}.{img_format}', Y[i, :, :])
+        plt.imsave(new_path + '/images/image_{i}.{img_format}'.format(i=i,img_format=img_format), X[i, :, :])
+        plt.imsave(new_path + '/masks/mask_{i}.{img_format}'.format(i=i,img_format=img_format), Y[i, :, :])
